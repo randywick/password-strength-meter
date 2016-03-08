@@ -1,0 +1,23 @@
+{
+  "name": "password-strength-meter",
+  "version": "0.0.1",
+  "description": "A JavaScript library to automatically display the strength of a password according to flexible rules.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha tests/testSpec.js || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/randywick/password-strength-meter.git"
+  },
+  "author": "RW,TM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/randywick/password-strength-meter/issues"
+  },
+  "homepage": "https://github.com/randywick/password-strength-meter#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
+}
