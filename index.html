@@ -1,0 +1,56 @@
+<html>
+<head>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+  }
+
+  #display {
+    height: 20px;
+    width: 100px;
+    border: 1px solid black;
+    position: relative;
+  }
+
+  .progress {
+    height: 100%;
+    width: 0;
+    background-color: blue;
+  }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="password">
+        <div>test password</div>
+        <input type="password" id="password">
+      </div>
+      <div id="display">
+        <div class="progress"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="../dist/index.bundle.js"></script>
+<script>
+  'use strict';
+
+  const pw = document.querySelector('#password');
+  const display = document.querySelector('#display');
+
+  PasswordStrengthMeter.attach(pw, {target: display})
+</script>
+</html>
