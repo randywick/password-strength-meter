@@ -101,7 +101,7 @@ gulp.task('serve-test', ['browserify', 'babelify-dist'], () => {
     }
   });
 
-  gulp.watch(['**/*.js', 'index.html'], ['js-watch']);
+  gulp.watch(['lib/*.js', 'tests/*.js', 'index.html'], ['js-watch']);
 });
 
 
