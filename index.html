@@ -14,17 +14,18 @@
     height: 100%;
   }
 
+  .content {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .content > div {
+    margin: 0 0.5em;
+  }
+
   #display {
     height: 20px;
     width: 100px;
-    border: 1px solid black;
-    position: relative;
-  }
-
-  .progress {
-    height: 100%;
-    width: 0;
-    background-color: blue;
   }
 
   </style>
@@ -33,13 +34,11 @@
 <body>
   <div class="container">
     <div class="content">
+      <div>test password</div>
       <div class="password">
-        <div>test password</div>
         <input type="password" id="password">
       </div>
-      <div id="display">
-        <div class="progress"></div>
-      </div>
+      <div id="display"></div>
     </div>
   </div>
 </body>
@@ -50,7 +49,10 @@
 
   const pw = document.querySelector('#password');
   const display = document.querySelector('#display');
+  const meter = PasswordStrengthMeter.attach(pw, {target: display})
 
-  PasswordStrengthMeter.attach(pw, {target: display})
+  meter.on('validation-changed', isValid => {
+    console.log('validation state', isValid);
+  })
 </script>
 </html>
