@@ -1,7 +1,8 @@
 'use strict';
 
   const pw = document.querySelector('#password');
-  const display = document.querySelector('#display');
+  const target = document.querySelector('#display');
+  const confirm = document.querySelector('#confirm-password');
 
 
   const complexityRules = [
@@ -18,20 +19,14 @@
   ]
 
   const options = {
-    target: display,
-    complexityRules
+    target,
+    complexityRules,
+    confirm
   }
 
   const meter = PasswordStrengthMeter.attach(pw, options)
 
   meter.on('validation-state', stateObj => {
     // console.log('validation state', stateObj);
-
-    const rules = stateObj.complexityRules
-      .reduce((value, rule) => {
-        value[rule.name] = rule
-        return value
-      }, {})
-
-    console.log(rules)
+    console.log(stateObj)
   })

@@ -8,9 +8,9 @@
 
   .container {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     height: 100%;
   }
 
@@ -21,6 +21,15 @@
 
   .content > div {
     margin: 0 0.5em;
+    /*width: 100px;*/
+  }
+
+  .label {
+    width: 100px;
+  }
+
+  .password {
+    /*width: 150px;*/
   }
 
   #display {
@@ -34,11 +43,18 @@
 <body>
   <div class="container">
     <div class="content">
-      <div>test password</div>
+      <div class="label">test password</div>
       <div class="password">
         <input type="password" id="password">
       </div>
       <div id="display"></div>
+    </div>
+    <div class="content">
+      <div class="label">confirm</div>
+      <div class="password">
+        <input type="password" id="confirm-password">
+      </div>
+      <div style="width: 100px;"></div>
     </div>
   </div>
 </body>
