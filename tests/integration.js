@@ -18,10 +18,19 @@
     }
   ]
 
+  const colors = [
+    '#dc322f',
+    '#d33682',
+    '#cb4b16',
+    '#b58900',
+    '#859900'
+  ]
+
   const options = {
     target,
     complexityRules,
-    confirm
+    confirm,
+    colors
   }
 
   const meter = PasswordStrengthMeter.attach(pw, options)
