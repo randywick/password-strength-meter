@@ -5,18 +5,42 @@
   const confirm = document.querySelector('#confirm-password');
 
 
+  // const complexityRules = [
+  //   {
+  //     name: 'no_spaces',
+  //     rule: input => !/\s/.test(input),
+  //     description: 'Contains no spaces'
+  //   },
+  //   {
+  //     name: 'length',
+  //     rule: input => input.length > 5 && input.length < 61,
+  //     description: 'Is between 6 and 60 characters'
+  //   }
+  // ]
+
   const complexityRules = [
     {
-      name: 'no_spaces',
-      rule: input => !/\s/.test(input),
-      description: 'Contains no spaces'
+        name: 'rule_one_lower',
+        rule: input => /[a-z]+/.test(input),
+        description: 'Has at least one lower case letter'
     },
     {
-      name: 'length',
-      rule: input => input.length > 5 && input.length < 61,
-      description: 'Is between 6 and 60 characters'
+        name: 'rule_one_upper',
+        rule: input => /[A-Z]+/.test(input),
+        description: 'Has at least one upper letter'
+    },
+    {
+        name: 'rule_one_number',
+        rule: input => /[0-9]+/.test(input),
+        description: 'Has at least 1 number'
+    },
+    {
+        name: 'rule_length',
+        rule: input => input.length >= 6 && input.length <= 60,
+        description: 'Is between 6 and 60 characters'
     }
-  ]
+];
+
 
   const colors = [
     '#dc322f',
@@ -30,7 +54,8 @@
     target,
     complexityRules,
     confirm,
-    colors
+    colors,
+    minScore: 2
   }
 
   const meter = PasswordStrengthMeter.attach(pw, options)
